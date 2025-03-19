@@ -16,32 +16,23 @@ import com.practicum.composstatelessontwo.ui.theme.ComposStateLessonTwoTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
-            ComposStateLessonTwoTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+            Greeting(
+                name = "Android"
+            )
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Greeting(name: String) {
     Text(
-        text = "Hello $name!",
-        modifier = modifier
+        text = "Hello $name!"
     )
 }
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    ComposStateLessonTwoTheme {
-        Greeting("Android")
-    }
+    Greeting("Android")
 }
